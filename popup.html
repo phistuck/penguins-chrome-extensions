@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Penguins</title>
+  <style>
+HTML, BODY
+{
+ margin: 0;
+ padding: 0;
+ height: 100%;
+}
+BODY, A, SPAN
+{
+ font: bold 9pt "Arial";
+ text-align: center;
+}
+EMBED
+{
+ display: block;
+ width: 300px;
+ height: 300px;
+}
+.standalone EMBED
+{
+ width: 100%;
+ height: calc(100% - 30px);
+}
+INPUT
+{
+ border: 1px solid lightgray;
+ border-radius: 5px;
+}
+:-webkit-full-screen,
+:-webkit-full-screen EMBED
+{
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+}
+:-webkit-full-screen A
+{
+ display: none;
+}
+A, SPAN
+{
+ color: #999999;
+ text-decoration: none;
+ display: inline-block;
+ margin: 0 12px;
+}
+SPAN
+{
+ color: red;
+}
+#settings
+{
+ position: fixed;
+ top: 5px;
+ bottom: 5px;
+ right: 5px;
+ left: 5px;
+ background: rgba(25, 25, 25, 0.5);
+ border-radius: 10px;
+ color: white;
+}
+#settings A
+{
+ color: #000000;
+ border-radius: 5px;
+ border: 2px solid black;
+ background: white;
+ padding: 5px;
+}
+:invalid
+{
+ background: red;
+}
+  </style>
+ </head>
+ <body>
+  <div id="settings" hidden="hidden">
+   <form id="setting-form">
+    <label>Number of penguins
+     <input type="number" min="1" max="50" name="total-count"
+            data-default-value="5" value="5"/></label><br/>
+    <label>Number of babies among them
+     <input type="number" min="1" max="50" data-default-value="2"
+            name="kid-subset-count" value="2"/></label><br/>
+    <label>Background color
+     <input pattern="#?([a-f0-9]{3}|[a-f0-9]{6})" type="_color"
+            name="background-color" data-default-value="ffffff" value="ffffff"/></label><br/>
+    <label>Background image
+     <input data-default-value="http://" name="background-image"
+            type="url" placeholder="Paste a URL here"/></label><br/><br/>
+    <a href="#">Close</a>
+   </form>
+  </div>
+  <script src="background.js"></script>
+  <script src="popup.js"></script>
+ </body>
+</html>
